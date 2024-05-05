@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Menu</title>
+    <style>
+        body {
+    background-color: white;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header {
+    background-color: black;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: white;
+}
+
+header img {
+    margin-right: 20px;
+    max-height: 60px;
+    border-radius: 5px;
+}
+
+header h1 {
+    font-size: 36px;
+    margin: 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+header h1 a {
+    color: inherit;
+    text-decoration: none;
+}
+
+header h1 a:hover, header h1 a:active {
+    text-decoration: none;
+}
+
+/* Navigation Styles */
+.topnav {
+    background-color: rgb(182, 45, 53);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    width: 100%;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.topnav a {
+    color: #f2f2f2;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    margin: 0 10px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.topnav a:hover {
+    background-color: rgb(135, 32, 39);
+    color: white;
+}
+
+/* Container Styles */
+.box {
+    color: black;
+    width: 1350px;
+    height: 5340px;
+    max-width: 8000px;
+    background-color: rgb(236, 236, 236);
+    border: 2px solid rgb(236, 236, 236);
+    padding: 20px;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+/* Adjusting styles for dropdown containers to manage layout and spacing */
+.dropdown-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align items to the start for better control */
+    margin-bottom: 20px;
+    width: 100%;
+    padding-right: 200px; /* Maintain padding for alignment on the right edge if needed */
+    text-align-last: center;
+}
+
+/* Styling for dropdown selects */
+.dropdown-container select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-right: 40px; /* Increase right margin to create more space */
+}
+
+/* Enhanced styling for quantity inputs */
+.quantity-input {
+    width: 50px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    font-size: 16px;
+    text-align: center;
+    margin-right: -200px; /* This pushes the quantity input to the far right within its container */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 600px) {
+    .dropdown-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .dropdown-container select, .dropdown-container input {
+        width: 100%;
+        margin-right: 0; /* Reset margins for mobile layout */
+    }
+
+    .quantity-input {
+        margin-top: 10px; /* Add top margin for vertical layout */
+        margin-left: 0; /* Reset left margin to align with the dropdown above */
+    }
+}
+#userName {
+    padding: 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box; /* Ensure padding and border are included in the width */
+    margin-bottom: 10px;
+    margin-left: 65px;
+}
+
+
+
+
+
+
+
+
+.AHC {
+    color: white;
+    width: 1300px;
+    height: 900px;
+    background-color: black;
+    border: 2px solid rgb(182, 45, 53);
+    padding: 0;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 21px;
+    position: relative;
+}
+
+.AHC header {
+    background-color: rgb(182, 45, 53);
+    color: white;
+    padding: 10px 20px;
+    width: 97%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+}
+
+.AHC h2 {
+    text-align: left;
+    margin-left: 20px;
+}
+
+.AHC p {
+    color: white;
+    text-align: left;
+    margin-left: 20px;
+}
+
+.AHC .content-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.AHC .menu-image {
+    width: 150px;
+    height: 150px;
+    margin-left: 20px;
+    border-radius: 100px;
+    order: -1;
+}
+
+.AHC .text-content {
+    flex: 1;
+    text-align: left;
+    padding: 20px;
+}
+
+.MT {
+    color: white;
+    width: 1300px;
+    height: 570px;
+    background-color: black;
+    border: 2px solid rgb(255, 196, 0);
+    padding: 0;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 21px;
+    position: relative;
+}
+
+.MT header {
+    background-color: rgb(255, 196, 0);
+    color: white;
+    padding: 10px 20px;
+    width: 97%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+}
+
+.MT h2 {
+    text-align: left;
+    margin-left: 20px;
+}
+
+.MT p {
+    color: white;
+    text-align: left;
+    margin-left: 20px;
+}
+
+.MT .content-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.MT .menu-image {
+    width: 150px;
+    height: 150px;
+    margin-left: 20px;
+    border-radius: 100px;
+    order: -1;
+}
+
+.MT .text-content {
+    flex: 1;
+    text-align: left;
+    padding: 20px;
+}
+
+.IS {
+    color: white;
+    width: 1300px;
+    height: 1060px;
+    background-color: black;
+    border: 2px solid white;
+    padding: 0;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 21px;
+    position: relative;
+}
+
+.IS header {
+    background-color: white;
+    color: black;
+    padding: 10px 20px;
+    width: 97%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+}
+
+.IS h2 {
+    text-align: left;
+    margin-left: 20px;
+}
+
+.IS p {
+    color: white;
+    text-align: left;
+    margin-left: 20px;
+}
+
+.IS .content-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.IS .menu-image {
+    width: 150px;
+    height: 150px;
+    margin-left: 20px;
+    border-radius: 100px;
+    order: -1;
+}
+
+.IS .text-content {
+    flex: 1;
+    text-align: left;
+    padding: 20px;
+}
+
+.CB {
+    color: white;
+    width: 1300px;
+    height: 790px;
+    background-color: black;
+    border: 2px solid rgb(0, 149, 67);
+    padding: 0;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 21px;
+    position: relative;
+}
+
+.CB header {
+    background-color: rgb(0, 149, 67);
+    color: white;
+    padding: 10px 20px;
+    width: 97%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+}
+
+.CB h2 {
+    text-align: left;
+    margin-left: 20px;
+}
+
+.CB p {
+    color: white;
+    text-align: left;
+    margin-left: 20px;
+}
+
+.CB .content-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.CB .menu-image {
+    width: 150px;
+    height: 150px;
+    margin-left: 20px;
+    border-radius: 100px;
+    order: -1;
+}
+
+.CB .text-content {
+    flex: 1;
+    text-align: left;
+    padding: 20px;
+}
+
+.AMWP {
+    color: white;
+    width: 1300px;
+    height: 790px;
+    background-color: black;
+    border: 2px solid rgb(255, 168, 210);
+    padding: 0;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 21px;
+    position: relative;
+}
+
+.AMWP header {
+    background-color: rgb(255, 168, 210);
+    color: white;
+    padding: 10px 20px;
+    width: 97%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+}
+
+.AMWP h2 {
+    text-align: left;
+    margin-left: 20px;
+}
+
+.AMWP p {
+    color: white;
+    text-align: left;
+    margin-left: 20px;
+}
+
+.AMWP .content-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.AMWP .menu-image {
+    width: 150px;
+    height: 150px;
+    margin-left: 20px;
+    border-radius: 100px;
+    order: -1;
+}
+
+.AMWP .text-content {
+    flex: 1;
+    text-align: left;
+    padding: 20px;
+}
+
+.End {
+    color: white(182, 45, 53);
+    width: 1300px;
+    height: 3000px;
+    background-color: rgb(182, 45, 53);
+    border: 2px solid black;
+    padding: 0;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 21px;
+    position: relative;
+}
+
+.End header {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    width: 96.93%;
+    margin-bottom: 20px;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+}
+
+.End h2 {
+    text-align: left;
+    margin-left: 20px;
+}
+.End h3 {
+    margin-left: 25px;
+}
+
+.End p {
+    color: white;
+    text-align: left;
+    margin-left: 20px;
+}
+
+.End .content-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.End .menu-image {
+    width: 150px;
+    height: 150px;
+    margin-left: 20px;
+    border-radius: 100px;
+    order: -1;
+}
+
+.End .text-content {
+    flex: 1;
+    text-align: left;
+    padding: 20px;
+}
+
+@media screen and (max-width: 600px) {
+    .menu-item {
+        flex-direction: column;
+    }
+}
+
+input[type="submit"] {
+    background-color: white;
+    color: rgb(182, 45, 53);
+    padding: 15px 32px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+input[type="submit"]:hover {
+    background-color: black;
+    color: rgb(182, 45, 53);
+}
+
+.dropdown-container {
+    margin: 10px auto;
+    text-align: left;
+    width: 80%;
+    max-width: 400px;
+}
+
+.dropdown-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+}
+
+.dropdown-container select {
+    width: 100%; 
+    padding: 10px; 
+    margin-bottom: 20px; 
+    border-radius: 5px; 
+    border: 1px solid #ddd; 
+    background-color: #fff; 
+    font-size: 16px; 
+    cursor: pointer; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+}
+
+.dropdown-container select:hover,
+.dropdown-container select:focus {
+    border-color: #888; 
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15); 
+}
+
+@media (max-width: 600px) {
+    .dropdown-container {
+        width: 95%; 
+    }
+}
+
+label[for="foodChoice1"] {
+    color: #E74C3C; 
+}
+
+label[for="foodChoice2"] {
+    color: rgb(255, 196, 0); 
+}
+
+label[for="foodChoice3"] {
+    color: white; 
+}
+
+label[for="foodChoice4"] {
+    color: rgb(0, 149, 67); 
+}
+
+label[for="foodChoice5"] {
+    color: rgb(255, 168, 210);
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    populateDropdowns();
+    setupFormSubmission();
+});
+
+// Define your vendor menu items
+const vendors = {
+    "Alek's Hot Chicken": ["Spicy Chicken Sandwich (Solo): $10", "Spicy Chicken Sandwich (Meal): $15", "Chicken Tenders (Solo): $8", "Chicken Tenders (Meal): $14", "Buffalo Wings (Solo): $9", "Buffalo Wings (Meal): $14"],
+    "Margarita's Tamales": ["Pork Tamales (Meal): $15", "Chicken Tamales (Meal): $12"],
+    "The Italian Spot": ["Chicken Alfredo: $16", "Arancini: $12", "Grilled Chicken with Penne alla Vodka sauce: $18", "Lasagne: $14", "Spaghetti: $12"],
+    "Christopher's Burger Joint": ["Cheeseburger (Meal): $14", "Bacon Cheeseburger (Meal): $18", "The Ultimate Burger (Meal): $25"],
+    "Anita Max Wynn Pizzeria": ["Pepperoni Pizza (3 slices): $6.99", "Pepperoni Pizza (Full): $12.99", "Pepperoni Pizza with Jalapenos (3 slices): $8.99", "Pepperoni Pizza with Jalapenos (Full): $14.99", "Supreme Pepperoni Pizza (3 slices): $10.99", "Supreme Pepperoni Pizza (Full): $15.99"]
+};
+
+function populateDropdowns() {
+    Object.keys(vendors).forEach((vendor, index) => {
+        populateDropdown(`foodChoice${index + 1}`, vendors[vendor]);
+    });
+}
+
+function populateDropdown(dropdownId, items) {
+    const dropdown = document.getElementById(dropdownId);
+    dropdown.innerHTML = '';
+    const defaultOption = document.createElement('option');
+    defaultOption.textContent = "Select an item";
+    defaultOption.value = "";
+    dropdown.appendChild(defaultOption);
+
+    items.forEach(item => {
+        const option = document.createElement('option');
+        option.value = item;
+        option.textContent = item;
+        dropdown.appendChild(option);
+    });
+}
+
+function validateQuantities() {
+    let isValid = true;
+    let vendorItemCounts = {};
+    for (let i = 1; i <= 5; i++) {
+        const dropdown = document.getElementById(`foodChoice${i}`);
+        const quantityInput = document.getElementById(`quantity${i}`);
+        const selectedVendor = Object.keys(vendors)[i-1];
+
+        if (dropdown.value !== "" && quantityInput.value < 1) {
+            alert('Please enter a valid quantity greater than zero for selected items.');
+            isValid = false;
+            break;
+        }
+
+        if (dropdown.value !== "" && quantityInput.value) {
+            vendorItemCounts[selectedVendor] = (vendorItemCounts[selectedVendor] || 0) + parseInt(quantityInput.value);
+            if (vendorItemCounts[selectedVendor] > 10) {
+                alert(`You can only order a maximum of 10 items from ${selectedVendor}.`);
+                isValid = false;
+                break;
+            }
+        }
+    }
+    return isValid;
+}
+
+function getSelectedItemsAndTotal() {
+    const selectedItems = [];
+    let totalPrice = 0;
+    for (let i = 1; i <= 5; i++) {
+        const dropdown = document.getElementById(`foodChoice${i}`);
+        const quantityInput = document.getElementById(`quantity${i}`);
+        if (dropdown.value !== "" && quantityInput.value > 0) {
+            const itemText = `${dropdown.value} x ${quantityInput.value}`;
+            selectedItems.push(itemText);
+
+            const priceMatch = dropdown.value.match(/\$\d+\.?\d*/);
+            if (priceMatch) {
+                const itemPrice = parseFloat(priceMatch[0].substring(1));
+                totalPrice += itemPrice * parseInt(quantityInput.value, 10);
+            }
+        }
+    }
+    return { selectedItems, totalPrice };
+}
+
+
+
+
+
+function calculatePickupTime() {
+    const currentTime = new Date();
+    const minutesToAdd = 45 + Math.floor(Math.random() * 15); // adds 45 to 59 minutes
+    const pickupTime = new Date(currentTime.getTime() + minutesToAdd * 60000);
+    return pickupTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: true });
+}
+
+
+
+
+
+function setupFormSubmission() {
+    const form = document.getElementById('checkoutForm');
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        const userNameInput = document.getElementById('userName');
+        const userName = userNameInput.value.trim();
+        if (!userName) {
+            alert("Please enter your name.");
+            return;
+        }
+
+        const { selectedItems, totalPrice } = getSelectedItemsAndTotal();
+        const quantitiesValid = validateQuantities();
+
+        if (selectedItems.length === 0) {
+            alert("Please select at least one item and enter a valid quantity.");
+            return;
+        } else if (!quantitiesValid) {
+            return;
+        }
+
+        const confirmationMessage = `Here is the order for ${userName}:\n${selectedItems.join('\n')}\nTotal: $${totalPrice.toFixed(2)}\n\nClick 'OK' to confirm your order.`;
+        if (confirm(confirmationMessage)) {
+            // This is where the form should be submitted if everything is validated.
+            form.submit();
+        }
+    });
+}
+
+
+
+
+
+
+</script>
+</head>
+<body>
+    <header>
+        <img src="IMAGES/UH.jpg" alt="University of Houston Logo">
+        <h1><a href="Cafeteria.html">Don's Cafeteria</a></h1>
+    </header>
+    
+    <nav class="topnav">
+        <a href="AboutUs.html"> About Us</a>
+        <a href="Menu.html">Menu</a>
+        <a href="Hours.html">Hours</a>
+        <a href="ContactUs.html">Contact Us</a>
+    </nav>
+
+<!--Below we create our menu page to display all foods vendors are selling.-->
+<div class="box">
+        <h2>
+             VENDOR OPTIONS
+        </h2>            
+        <div class="AHC">
+            <header>
+                <h2><i>Alek's Hot Chicken</i></h2>
+            </header>
+            <div class="content-container">
+                <div class="text-content">
+                    <h2>Spicy Chicken Sandwich</h2>
+                    <p>Includes: Texas bread, Lettuce, Tomatoes, Pickles, and our signature 'Sheesh' sauce.</p>
+                    <p><b>Meal:</b> A side of fries and 16oz drink</p>
+                    <p><b>Solo: </b> Sandwich by itself</p>
+                    <p><b>Solo:</b> $10 | <b>Meal:</b> $15</p>
+                </div>
+                <img src="IMAGES/Madam's Chicken.jpg" alt="Spicy Chicken Sandwich" class="menu-image">
+            </div>
+            <div class="content-container">
+                <div class="text-content">
+                    <h2>Chicken Tenders</h2>
+                    <p><b>Flavors:</b> Mild, Hot, or Buffalo Burnin' Hot </p>
+                    <p><b>Quantity:</b> 6 pc.</p>
+                    <p><b>Meal:</b> A side of fries and 16oz drink</p>
+                    <p><b>Solo:</b> Sandwich by itself </p>
+
+
+                    <p><b>Solo:</b> $8 | <b>Meal:</b> $14</p>
+                </div>
+                    <img src="IMAGES/Madam's Chicken 2.jpg" alt="CC" class="menu-image">     
+            </div>
+            <div class="content-container">
+                <div class="text-content">
+                    <h2>Buffalo Wings</h2>
+                    <p><b>Flavors:</b> Mild, Fire in the Hole, or Carolina Reaper</p>
+                    <p><b>Quantity:</b> 6 pc.</p>
+                    <p><b>Solo:</b> $9 | <b>Meal:</b> $14</p>
+                </div>
+                    <img src="IMAGES/Madam's Chicken 3.jpg" alt="CC3" class="menu-image">  
+            </div>
+
+           
+        </div>
+
+    
+        <div class="MT">
+            <header>
+                <h2><i>Margarita's Tamales</i></h2>
+            </header>
+        
+            <div class="content-container">
+                <div class="text-content">
+                    <h2>Tamales (Pork)</h2>
+                    <p>Description: A savory traditional Mesoamerican dish made of masa (a dough made from corn) filled with seasoned, tender pork and steamed in a corn husk for a rich, flavorful experience.</p>
+                    <p>Meal: 6 Pork Tamales, a side of beans and a drink.</p>
+                    <p><b>Price:</b> $15</p>
+                </div>
+                <img src="IMAGES/Tamales 1.jpg" alt="Spicy Chicken Sandwich" class="menu-image">
+            </div>
+            <div class="content-container">
+                <div class="text-content">
+                    <h2>Tamales (Chicken)</h2>
+                    <p>A delightful comfort food consisting of soft, steamed corn dough filled with succulent, spiced chicken, often accompanied by a variety of savory sauces.</p>
+                    <p>Meal: 6 Chicken Tamales, a side of beans and a drink.</p>
+                    <p><b>Price:</b> $12</p>
+                </div>
+                    <img src="IMAGES/Tamales 2.jpg" alt="CC" class="menu-image">     
+            </div>
+        </div>
+
+
+        <div class="IS">
+            <header>
+                <h2><i>The Italian Spot</i></h2>
+            </header>
+        
+            <div class="content-container">
+                <div class="text-content">
+                    <h2>Chicken Alfredo</h2>
+                    <p>Description: A rich and comforting dish combining tender chicken and creamy Parmesan sauce served over fettuccine pasta.</p>
+                    <p><b> Price:</b> $16</p>
+                </div>
+                <img src="IMAGES/Alfredo.jpg" alt="IT1" class="menu-image">
+            </div>
+            <div class="content-container">
+                <div class="text-content">
+                    <h2>Arancini</h2>
+                    <p>Description: Arancini are crispy, deep-fried balls of risotto filled with gooey cheese and often mixed with peas, meat, or tomato sauce.</p>
+                    <p><b> Price:</b> $12</p>
+                </div>
+                <img src="IMAGES/Arancini.jpg" alt="IT2" class="menu-image">
+            </div>
+            <div class="content-container">
+                <div class="text-content">
+                    <h2>Grilled Chicken with Penne alla Vodka sauce</h2>
+                    <p>Description: Grilled chicken served alongside penne pasta in a creamy tomato-vodka sauce.</p>
+                    <p><b> Price:</b> $18</p>
+                </div>
+                <img src="IMAGES/Grilled Chicken with Penne alla Vodka sauce.jpg" alt="IT2" class="menu-image">
+            </div>
+            <div class="content-container">
+                <div class="text-content">
+                    <h2>Lasagne</h2>
+                    <p>Description: A traditional Italian dish made of layered pasta sheets, alternating with sauces, cheeses, and ingredients like meat or vegetables, baked until bubbly and golden.</p>
+                    <p><b> Price:</b> $14</p>
+                </div>
+                <img src="IMAGES/Lasagne.jpg" alt="IT2" class="menu-image">
+            </div>
+            <div class="content-container">
+                <div class="text-content">
+                    <h2>Spaghetti</h2>
+                    <p>Description: a long, thin pasta served with various sauces, such as rich tomato, creamy Alfredo, or hearty Bolognese, often accompanied by meat, vegetables, and grated cheese.</p>
+                    <p><b> Price:</b> $12</p>
+                </div>
+                <img src="IMAGES/Spaghetti.jpg" alt="IT2" class="menu-image">
+            </div>
+
+        </div>
+
+
+        <div class="CB">
+            <header>
+                <h2><i>Christopher's Burger Joint</i></h2>
+            </header>
+            <div class="content-container">
+                <div class="text-content">
+                    <h2>Cheeseburger</h2>
+                    <p>Description: A juicy beef patty, topped with melted cheese, fresh lettuce, and ripe tomato, all nestled within a soft bun.</p>
+                    <p>Meal: A side of fries and a 16 oz drink.</p>
+                    <p><b> Price:</b> $14</p>
+                </div>
+                <img src="IMAGES/CheeseBurger.jpg" alt="BG1" class="menu-image">
+            </div>
+            <div class="content-container">
+                <div class="text-content">
+                    <h2>Bacon Cheeseburger </h2>
+                    <p>Description: A succulent beef patty, crispy bacon, melted cheese, fresh lettuce, and sliced tomato, served in a toasted bun.</p>
+                    <p>Meal: A side of Onion Rings and a 16 oz drink.</p>
+                    <p><b> Price:</b> $18</p>
+                </div>
+                <img src="IMAGES/BaconCheeseBurger.jpg" alt="BG2" class="menu-image">
+            </div>
+            <div class="content-container">
+                <div class="text-content">
+                    <h2>The Ultimate Burger </h2>
+                    <p>Description: This hearty cheeseburger boasts three juicy beef patties, crispy bacon, melted cheese, fresh lettuce, ripe tomato, and crunchy onion rings, all stacked high in a fluffy bun.</p>
+                    <p>Meal: A side of Sweet Potatoe fries and a 16 oz drink</p>
+                    <p><b> Price:</b> $25</p>
+                </div>
+                <img src="IMAGES/UltimateBurger.jpg" alt="BG2" class="menu-image">
+            </div>
+        </div>
+
+
+        <div class="AMWP">
+            <header>
+                <h2><i>Anita Max Wynn Pizzeria</i></h2>
+            </header>
+        
+            <div class="content-container">
+                <div class="text-content">
+                    <h2>Pepperoni Pizza</h2>
+                    <p>Quantity: 3 slices, or all 8 slices.</p>
+                    <p>Description: Pepperoni pizza freshly baked in the oven.</p>
+                    <p><b> Price:</b> $6.99-$12.99</p>
+                </div>
+                <img src="IMAGES/Pepperoni.jpg" alt="P1" class="menu-image">
+            </div>
+            <div class="content-container">
+                <div class="text-content">
+                    <h2>Pepperoni Pizza with Jalapenos</h2>
+                    <p>Quantity: 3 slices, or all 8 slices.</p>
+                    <p>Description: Combines the classic, savory taste of pepperoni with a fiery kick from thinly sliced, spicy jalapenos, creating an irresistibly zesty and bold flavor experience.</p>
+                    <p><b> Price:</b> $8.99-$14.99</p>
+                </div>
+                <img src="IMAGES/JPepperoni.jpg" alt="P2" class="menu-image">
+            </div>
+            <div class="content-container">
+                <div class="text-content">
+                    <h2>Supreme Pepperoni Pizza</h2>
+                    <p>Quantity: 3 slices, or all 8 slices.</p>
+                    <p>Description: Adorned with vibrant Red and Green Bell Peppers, rich olives, pepperoni, and crisp onions, offers a mouthwatering symphony of flavors.</p>
+                    <p><b> Price:</b> $10.99-$15.99</p>
+                </div>
+                <img src="IMAGES/Supreme.jpg" alt="P2" class="menu-image">
+            </div>  
+
+
+
+
+        <br><br><br><br>
+        
+        
+
+<!--Below we are creating our checkout section where the customer chooses what they want to check out.-->
+<div class="End">
+    <header>
+        <h2>Checkout</h2>
+    </header>
+    <h3>Select any of the following to place an order!</h3>
+    <form id="checkoutForm" action="/submit-menu" method="POST">
+        <!-- Dropdowns for food selection with quantity inputs -->
+        <div class="dropdown-container">
+            <label for="userName">Name:</label>
+            <input type="text" id="userName" name="userName" placeholder="Enter your name" required>
+        </div>
+        
+        <div class="dropdown-container">
+            <label for="foodChoice1"><i>Alek's Hot Chicken</i>:</label>
+            <select id="foodChoice1" name="food1">
+                <!-- Options will be populated dynamically -->
+            </select>
+            <label for="quantity1">Quantity:</label>
+            <input type="number" id="quantity1" name="quantity1" min="1" class="quantity-input">
+        </div>
+        <div class="dropdown-container">
+            <label for="foodChoice2"><i>Margarita's Tamales</i>:</label>
+            <select id="foodChoice2" name="food2"></select>
+            <label for="quantity2">Quantity:</label>
+            <input type="number" id="quantity2" name="quantity2" min="1" class="quantity-input">
+        </div>
+        <div class="dropdown-container">
+            <label for="foodChoice3"><i>The Italian Spot</i>:</label>
+            <select id="foodChoice3" name="food3"></select>
+            <label for="quantity3">Quantity:</label>
+            <input type="number" id="quantity3" name="quantity3" min="1" class="quantity-input">
+        </div>
+        <div class="dropdown-container">
+            <label for="foodChoice4"><i>Christopher's Burger Joint</i>:</label>
+            <select id="foodChoice4" name="food4"></select>
+            <label for="quantity4">Quantity:</label>
+            <input type="number" id="quantity4" name="quantity4" min="1" class="quantity-input">
+        </div>
+        <div class="dropdown-container">
+            <label for="foodChoice5"><i>Anita Max Wynn Pizzeria</i>:</label>
+            <select id="foodChoice5" name="food5"></select>
+            <label for="quantity5">Quantity:</label>
+            <input type="number" id="quantity5" name="quantity5" min="1" class="quantity-input">
+        </div>
+
+        <input type="submit" value="Submit Order">
+    </form>
+</div>
+</div>
+</body>
+</html>

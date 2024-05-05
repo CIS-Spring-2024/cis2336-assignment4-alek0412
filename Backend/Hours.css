@@ -1,0 +1,167 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+/* Header styles */
+header {
+    background-color: black;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header img {
+    margin-right: 20px;
+    max-height: 60px;
+    border-radius: 5px;
+}
+
+header h1 {
+    font-size: 36px;
+    margin: 0;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Top Navigation styles */
+.topnav {
+    background-color: rgb(182, 45, 53);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    width: 100%;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.topnav a {
+    color: #f2f2f2;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    margin: 0 10px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.topnav a:hover {
+    background-color: rgb(135, 32, 39);
+    color: white;
+}
+
+
+header h1 a {
+    color: inherit; /* This makes the link have the same color as the surrounding text */
+    text-decoration: none; /* This removes the underline from the link */
+}
+
+header h1 a:hover, header h1 a:active {
+    text-decoration: none; /* Optional: Ensures that the link doesn't get underlined when hovered or clicked */
+}
+
+footer {
+    background-color: black;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    height: 15px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+footer a:hover {
+    color: #ddd;
+}
+
+
+/* Styling the container to center the table and add necessary spacing */
+.table-container {
+    width: 80%; /* Adjusted width for better spacing */
+    margin: 0 auto; /* Center align the container */
+    overflow: hidden; /* Ensures no content spills out */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border-radius: 12px;
+}
+
+/* Table styling for layout and full width */
+table {
+    width: 100%; /* Ensures table stretches to fill container */
+    border-collapse: collapse; /* Removes space between borders */
+    table-layout: fixed; /* Keeps columns evenly spaced */
+
+}
+
+/* Unified styling for headers and cells */
+th, td {
+    border: 2px solid white; /* Dark red borders */
+    text-align: center; /* Centers text in cells */
+    padding: 12px; /* Sufficient padding for content */
+    color: white; /* Dark text for readability */
+    background-color: black;
+}
+
+/* Specific styling for table headers */
+thead th {
+    background-color: rgb(182, 45, 53); /* Dark red background */
+    color: white; /* White text for contrast */
+    font-size: 16px; /* Slightly larger text for emphasis */
+}
+
+/* Rounded corners on the first and last header elements */
+thead th:first-child {
+    border-top-left-radius: 10px; /* Rounded corner on the top-left */
+}
+
+thead th:last-child {
+    border-top-right-radius: 10px; /* Rounded corner on the top-right */
+}
+
+
+.hours-info {
+    padding: 20px;
+    margin-top: 20px;
+    background-color: rgb(132, 132, 132); /* Light gray background for the section */
+    border-radius: 1px; /* Rounded corners for the div */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.table-container {
+    margin-bottom: 30px; /* Adds space between tables */
+    background-color: white; /* White background for each table */
+    border-radius: 8px; /* Rounded corners for tables */
+    padding: 20px; /* Padding inside the table container */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Lighter shadow for each table */
+}
+
+/* Enhance the visual hierarchy by styling th elements */
+th {
+    background-color: #b62935; /* A stronger, darker shade for headers */
+    color: white;
+    font-size: 18px; /* Larger font size for headers */
+}
+
+/* Add a hover effect to rows for better interactivity */
+tbody tr:hover {
+    background-color: #f2f2f2; /* Light gray background on hover */
+}
+
+div h2{
+    color: #b62935;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-left: 790px;
+    font-size: 45px;
+
+
+}
